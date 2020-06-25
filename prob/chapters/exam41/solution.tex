@@ -1,0 +1,26 @@
+Let X be the Bernoulli random variable denoting the number of times head is obtained when a coin is tossed n times.Then,
+\begin{align}
+\pr{X = 1} &= p,
+\\
+\pr{X = k} &= \comb{n}{k}p^k\brak{1-p}^\brak{n-k}, \quad k = 0,\dots, n
+\end{align}
+For the given problem, $n = 10$ and $p = 1-p = \frac{1}{2}$ for a fair coin
+\\
+(i)for exactly six heads k=6,
+\begin{align}
+\pr{X = 6}= \comb{10}{6}\frac{1}{2}^10
+\\
+&= \frac{105}{512}
+\end{align}
+(i)Probability of obtaining atmost six heads is ,
+\begin{align}
+\pr{X \leq 6}= 1-\brak{\pr{X=7}+\pr{X=8}+\pr{X=9}+\pr{X=10}}
+comb{10}{6}\frac{1}{2}^10
+\\
+&= \frac{105}{512}
+\end{align}
+
+The python code for the distribution of data,
+\begin{lstlisting}
+solutions/10-1/prob/codes/prob4.py
+\end{lstlisting}
