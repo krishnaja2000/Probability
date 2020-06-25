@@ -3,24 +3,36 @@ Let X be the Bernoulli random variable denoting the number of times head is obta
 \pr{X = 1} &= p,
 \\
 \pr{X = k} &= \comb{n}{k}p^k\brak{1-p}^\brak{n-k}, \quad k = 0,\dots, n
+\label{eq:exam41_1}
 \end{align}
 For the given problem, $n = 10$ and $p = 1-p = \frac{1}{2}$ for a fair coin
 \\
-(i)for exactly six heads k=6,
+(i)To calculate probability for exactly six heads subsititute k=6 in equation \eqref{eq:exam41_1},
 \begin{align}
 \pr{X = 6}= \comb{10}{6}\frac{1}{2}^10
 \\
 &= \frac{105}{512}
+\label{eq:exam41_2}
 \end{align}
-(i)Probability of obtaining atmost six heads is ,
-\begin{align}
-\pr{X \leq 6}= 1-\brak{\pr{X=7}+\pr{X=8}+\pr{X=9}+\pr{X=10}}
-comb{10}{6}\frac{1}{2}^10
+(ii)Using \eqref{eq:exam41_1}, Probability of obtaining atleast six heads is ,
+\begin{align} 
+\pr{X \geq 6}= \pr{X=6}+\pr{X=7}+\pr{X=8}+\pr{X=9}+\pr{X=10}
+\implies \frac{1}{2}^10\brak{\comb{10}{6}+\comb{10}{7}+\comb{10}{8}+\comb{10}{9}+\comb{10}{10}}
 \\
-&= \frac{105}{512}
+&= \frac{193}{512}
+\label{eq:exam41_3}
 \end{align}
-
-The python code for the distribution of data,
+(iii)Probability of obtaining atmost six heads is ,
+\begin{align}
+\pr{X \leq 6}= 1 - \pr{X \geq 6} + \pr{X=6}
+\end{align}
+Substituting \eqref{eq:exam41_2} and \eqref{eq:exam41_2}, 
+\begin{align}
+\pr{X \leq 6}= 1 - \frac{193}{512} +  \frac{105}{512} 
+\\
+&=\frac{53}{64}
+\end{align}
+The python code for the above problem is,
 \begin{lstlisting}
-solutions/10-1/prob/codes/prob4.py
+./prob/codes/exam41.py
 \end{lstlisting}
